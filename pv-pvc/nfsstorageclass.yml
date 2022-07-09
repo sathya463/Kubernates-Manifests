@@ -104,7 +104,7 @@ kind: StorageClass
 metadata:
   name: nfs-storageclass # IMPORTANT pvc needs to mention this name
   annotations:
-    storageclass.kubernetes.io/is-default-class: "true"
+    storageclass.kubernetes.io/is-default-class: "true" # we are making nfs-storageclass as default storage class. if volume required for any pod this storage class is going to create volume automatically, if you dont mention this as default you need to create storage class for every application. 
 provisioner: nfs-provisioner # name can be anything
 parameters:
   archiveOnDelete: "false"
